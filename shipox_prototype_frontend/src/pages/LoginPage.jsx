@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { login as apiLogin } from '../api/auth';
@@ -100,11 +100,14 @@ export default function LoginPage() {
         </form>
 
         <div className="login-footer">
-          <p>Demo Credentials</p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center' }}>
-            <code>admin@shipox.local / admin123</code>
-            <code>merchant@shipox.local / merchant123</code>
-            <code>driver@shipox.local / driver123</code>
+          <p>Don't have an account? <Link to="/register" style={{ color: 'var(--accent-primary)', fontWeight: 600 }}>Sign up</Link></p>
+          <div style={{ marginTop: '16px' }}>
+            <p style={{ fontSize: '12px' }}>Demo Credentials</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center' }}>
+              <code>admin@shipox.local / admin123</code>
+              <code>merchant@shipox.local / merchant123</code>
+              <code>driver@shipox.local / driver123</code>
+            </div>
           </div>
         </div>
       </div>

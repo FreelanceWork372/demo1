@@ -15,15 +15,15 @@ router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
 
 def count_orders_by_status(db: Session, base_query):
     counts = {
-        "total_orders": base_query.count(),
-        "created_orders": base_query.filter(Order.current_status == OrderStatus.created).count(),
-        "assigned_orders": base_query.filter(Order.current_status == OrderStatus.assigned).count(),
-        "picked_up_orders": base_query.filter(Order.current_status == OrderStatus.picked_up).count(),
-        "in_transit_orders": base_query.filter(Order.current_status == OrderStatus.in_transit).count(),
-        "delivered_orders": base_query.filter(Order.current_status == OrderStatus.delivered).count(),
-        "failed_orders": base_query.filter(Order.current_status == OrderStatus.failed).count(),
-        "cancelled_orders": base_query.filter(Order.current_status == OrderStatus.cancelled).count(),
-        "returned_orders": base_query.filter(Order.current_status == OrderStatus.returned).count(),
+        "total": base_query.count(),
+        "created": base_query.filter(Order.current_status == OrderStatus.created).count(),
+        "assigned": base_query.filter(Order.current_status == OrderStatus.assigned).count(),
+        "picked_up": base_query.filter(Order.current_status == OrderStatus.picked_up).count(),
+        "in_transit": base_query.filter(Order.current_status == OrderStatus.in_transit).count(),
+        "delivered": base_query.filter(Order.current_status == OrderStatus.delivered).count(),
+        "failed": base_query.filter(Order.current_status == OrderStatus.failed).count(),
+        "cancelled": base_query.filter(Order.current_status == OrderStatus.cancelled).count(),
+        "returned": base_query.filter(Order.current_status == OrderStatus.returned).count(),
     }
 
     return counts

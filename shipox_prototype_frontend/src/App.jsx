@@ -6,6 +6,7 @@ import DashboardLayout from './components/Layout/DashboardLayout';
 
 // Pages
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import UsersPage from './pages/admin/UsersPage';
 import MerchantsPage from './pages/admin/MerchantsPage';
@@ -40,6 +41,7 @@ function App() {
           <Routes>
             {/* Public */}
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
 
             {/* Root redirect */}
             <Route path="/" element={<RoleRedirect />} />
